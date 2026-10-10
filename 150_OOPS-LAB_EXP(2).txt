@@ -1,0 +1,57 @@
+//PROGRAM:
+
+//Currency.java
+package currency;
+
+public class Currency {
+    public void dollarToINR(double d){ System.out.println("INR = " + (d*83)); }
+    public void euroToINR(double e){ System.out.println("INR = " + (e*90)); }
+    public void yenToINR(double y){ System.out.println("INR = " + (y*0.56)); }
+
+    public void inrToDollar(double i){ System.out.println("Dollar = " + (i/83)); }
+    public void inrToEuro(double i){ System.out.println("Euro = " + (i/90)); }
+    public void inrToYen(double i){ System.out.println("Yen = " + (i/0.56)); }
+}
+
+//Distance.java
+package distance;
+
+public class Distance {
+    public void meterToKM(double m){ System.out.println("KM = " + (m/1000)); }
+    public void kmToMeter(double k){ System.out.println("Meter = " + (k*1000)); }
+    public void milesToKM(double m){ System.out.println("KM = " + (m*1.609)); }
+    public void kmToMiles(double k){ System.out.println("Miles = " + (k/1.609)); }
+}
+
+//Time.java
+package time;
+
+public class Time {
+    public void hourToMinute(double h){ System.out.println("Minutes = " + (h*60)); }
+    public void minuteToHour(double m){ System.out.println("Hours = " + (m/60)); }
+    public void secondToMinute(double s){ System.out.println("Minutes = " + (s/60)); }
+    public void minuteToSecond(double m){ System.out.println("Seconds = " + (m*60)); }
+}
+
+//Main.java
+import currency.Currency;
+import distance.Distance;
+import time.Time;
+
+public class Main {
+    public static void main(String[] args) {
+        Currency c = new Currency();
+        Distance d = new Distance();
+        Time t = new Time();
+
+        c.dollarToINR(10);
+        d.meterToKM(5000);
+        t.hourToMinute(2);
+    }
+}
+
+
+//OUTPUT:
+INR = 830.0
+KM = 5.0
+Minutes = 120.0
