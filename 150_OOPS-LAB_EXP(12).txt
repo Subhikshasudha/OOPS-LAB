@@ -1,0 +1,126 @@
+﻿STUDENT MANAGEMENT SYSTEM
+
+
+import java.util.Scanner;
+
+
+public class StudentManagementSystem {
+
+
+public static void main(String[] args) {
+
+
+Scanner sc = new Scanner(System.in);
+
+
+String name = ""; int registerNo = 0; int mark1 = 0;
+int mark2 = 0; int mark3 = 0;
+
+int choice;
+
+
+do {
+System.out.println("\n===== STUDENT MANAGEMENT SYSTEM =====");
+System.out.println("1. Add Student"); System.out.println("2. Display Student"); System.out.println("3. Calculate Grade"); System.out.println("4. Exit"); System.out.print("Enter your choice: ");
+
+choice = sc.nextInt();
+
+
+switch (choice) {
+
+
+case 1:
+
+sc.nextLine();
+
+
+System.out.print("Enter student name: "); name = sc.nextLine();
+
+System.out.print("Enter register number: "); registerNo = sc.nextInt();
+
+System.out.print("Enter Mark 1: "); mark1 = sc.nextInt();
+
+System.out.print("Enter Mark 2: "); mark2 = sc.nextInt();
+
+System.out.print("Enter Mark 3: "); mark3 = sc.nextInt();
+
+System.out.println("Student added successfully!"); break;
+
+case 2:
+System.out.println("\n----- STUDENT DETAILS	");
+System.out.println("Name		: " + name); System.out.println("Register No : " + registerNo); System.out.println("Mark 1	: " + mark1); System.out.println("Mark 2	: " + mark2); System.out.println("Mark 3	: " + mark3);
+break;
+
+
+case 3:
+double average = (mark1 + mark2 + mark3) / 3.0;
+
+System.out.println("\n----- RESULT	");
+System.out.println("Average : " + average);
+
+
+if (average >= 90) { System.out.println("Grade : A+");
+}
+else if (average >= 80) { System.out.println("Grade : A");
+}
+else if (average >= 70) { System.out.println("Grade : B");
+}
+else if (average >= 60) { System.out.println("Grade : C");
+}
+else if (average >= 50) { System.out.println("Grade : D");
+}
+else {
+System.out.println("Grade : F");
+}
+
+
+break;
+
+
+case 4:
+System.out.println("Thank you!"); break;
+
+default:
+System.out.println("Invalid choice!");
+
+}
+
+
+} while (choice != 4);
+
+
+sc.close();
+}
+}
+
+
+Example output:
+
+
+===== STUDENT MANAGEMENT SYSTEM =====
+1. Add Student
+2. Display Student
+3. Calculate Grade
+4. Exit
+Enter your choice: 1
+
+
+Enter student name: Subhiksha Enter register number: 101 Enter Mark 1: 85
+Enter Mark 2: 90
+Enter Mark 3: 80
+
+
+Student added successfully!
+
+
+===== STUDENT MANAGEMENT SYSTEM =====
+1. Add Student
+2. Display Student
+3. Calculate Grade
+4. Exit
+Enter your choice: 2
+
+----- STUDENT DETAILS -----
+Name		: Subhiksha Register No : 101 Mark 1	: 85
+Mark 2	: 90
+Mark 3	: 80
