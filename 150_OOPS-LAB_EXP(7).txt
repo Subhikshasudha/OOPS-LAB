@@ -1,0 +1,47 @@
+//PROGRAM 
+
+import java.util.Random; 
+class NumberThread extends Thread { 
+public void run() { 
+Random r = new Random(); 
+int n = r.nextInt(100); 
+System.out.println("Generated Number: " + n); 
+if (n % 2 == 0) { 
+SquareThread t2 = new SquareThread(n); 
+t2.start(); 
+} else { 
+CubeThread t3 = new CubeThread(n); 
+t3.start(); 
+} 
+} 
+} 
+class SquareThread extends Thread { 
+int n; 
+SquareThread(int n) { 
+this.n = n; 
+} 
+public void run() { 
+System.out.println("Square of " + n + " = " + (n * n)); 
+} 
+} 
+class CubeThread extends Thread { 
+int n; 
+CubeThread(int n) { 
+this.n = n; 
+} 
+public void run() { 
+System.out.println("Cube of " + n + " = " + (n * n * n)); 
+} 
+} 
+public class MultiThreadDemo { 
+public static void main(String[] args) { 
+NumberThread t1 = new NumberThread(); 
+t1.start(); 
+} 
+} 
+
+//OUTPUT
+Generated Number: 24 
+Square of 24 = 576 
+Generated Number: 7 
+Cube of 7 = 343
